@@ -10,11 +10,14 @@ import {AppContextProvider} from '@/context';
 import {AppNavigator} from '@/navigators';
 import {QueryClientProvider} from '@tanstack/react-query';
 import React from 'react';
+import {PaperProvider} from 'react-native-paper';
 function App(): JSX.Element {
   return (
     <QueryClientProvider client={queryClient}>
       <AppContextProvider>
-        <AppNavigator />
+        <PaperProvider>
+          <AppNavigator />
+        </PaperProvider>
       </AppContextProvider>
     </QueryClientProvider>
   );

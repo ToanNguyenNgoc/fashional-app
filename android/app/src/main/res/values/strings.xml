@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">fashionalapp</string>
+    <string name="firebase_api_key">AIzaSyBr34f4lSDLc0LVd4Lm25x-QVOmslmAh1s</string>
 </resources>

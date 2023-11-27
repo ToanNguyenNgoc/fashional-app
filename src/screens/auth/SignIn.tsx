@@ -1,6 +1,7 @@
+/* eslint-disable react/no-unstable-nested-components */
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable prettier/prettier */
-import { FButton, FButtonIcon, Header } from '@/components';
+import { FButtonIcon, Header } from '@/components';
 import React, { FC, useState } from 'react';
 import { Alert, SafeAreaView, Text, TextInput, View } from 'react-native';
 import { signSt } from './style';
@@ -18,6 +19,7 @@ import { storage } from '@/utils';
 import { ACCESS_TOKEN, REFRESH_TOKEN, TOKEN_EX_AT } from '@/constants';
 import { useProfileStore } from '@/stores/zustand';
 import { ZProfileState } from '@/stores/zustand/type';
+import { Button } from 'react-native-paper';
 
 const signInSchema = Yup.object({
   email: Yup.string().required('Vui lòng nhập email'),
@@ -26,12 +28,12 @@ const signInSchema = Yup.object({
 
 export const SignInScreen: FC = () => {
   const navigate = useNavigation();
-  const [getProfile] = useProfileStore((state:ZProfileState) => [state.getProfile]);
+  const [getProfile] = useProfileStore((state: ZProfileState) => [state.getProfile]);
   const [showPw, setShowPw] = useState(false);
   const { mutate, isLoading } = useMutation({
     mutationFn: (body: { email: string, password: string }) => authApi.login(body),
     onSuccess: async (data) => {
-      const {accessToken, refreshToken, token_expired_at} = data.context;
+      const { accessToken, refreshToken, token_expired_at } = data.context;
       await storage.setItem(ACCESS_TOKEN, accessToken);
       await storage.setItem(REFRESH_TOKEN, refreshToken);
       await storage.setItem(TOKEN_EX_AT, token_expired_at);
@@ -114,7 +116,15 @@ export const SignInScreen: FC = () => {
                 </View>
                 <Text style={signSt.forgot}>Quên mật khẩu ?</Text>
               </View>
-              <FButton onPress={() => handleSubmit()} loading={isLoading} title="Đăng nhập" />
+              <Button
+                onPress={() => handleSubmit()}
+                disabled={isLoading}
+                loading={isLoading} mode="contained"
+                buttonColor={color.primary} style={{ borderRadius: 8 }}
+              >
+                Đăng nhập
+              </Button>
+              <SignSocial />
               <Text style={signSt.textSignUp}>Bạn chưa có tài khoản?
                 <Text style={{ fontWeight: '600', textDecorationLine: 'underline' }}>
                   Đăng ký ngay
@@ -125,5 +135,37 @@ export const SignInScreen: FC = () => {
         </Formik>
       </View>
     </SafeAreaView>
+  );
+};
+const SignSocial: FC = () => {
+  const navigate = useNavigation();
+  const [getProfile] = useProfileStore((state: ZProfileState) => [state.getProfile]);
+  const { mutate, isLoading } = useMutation({
+    mutationFn: () => authApi.loginGoogle(),
+    onSuccess: async (data) => {
+      if (data?.context) {
+        const { accessToken, refreshToken, token_expired_at } = data.context;
+        await storage.setItem(ACCESS_TOKEN, accessToken);
+        await storage.setItem(REFRESH_TOKEN, refreshToken);
+        await storage.setItem(TOKEN_EX_AT, token_expired_at);
+        getProfile();
+        navigate.goBack();
+      }
+    },
+  });
+  return (
+    <View style={signSt.socialCnt}>
+      <Text style={{ textAlign: 'center', marginBottom: 8 }} >Hoặc đăng nhập với</Text>
+      <Button
+        icon={() => <Svg.IcGoogle width={20} height={20} />}
+        mode="outlined"
+        style={{ borderRadius: 8 }}
+        textColor={color.primary}
+        onPress={() => mutate()}
+        loading={isLoading} disabled={isLoading}
+      >
+        Đăng nhập với Google
+      </Button>
+    </View>
   );
 };

@@ -6,6 +6,7 @@ import IcEyeCrossed from './eye-scrossed.svg';
 import IcEye from './eye.svg';
 import IcAddCartBlack from './add-cart-black.svg';
 import IcShoppingCartBlack from './shopping-cart-black.svg';
+import IcGoogle from './google-svgrepo-com.svg';
 
 const SvgJs = {
   IcFill,
@@ -16,5 +17,6 @@ const SvgJs = {
   IcEye,
   IcAddCartBlack,
   IcShoppingCartBlack,
+  IcGoogle,
 };
 export default SvgJs;

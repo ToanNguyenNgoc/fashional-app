@@ -1,19 +1,20 @@
 /* eslint-disable prettier/prettier */
 import React, { FC } from 'react';
-import { Text, View, Animated, SafeAreaView, StatusBar, Platform } from 'react-native';
+import { Text, View, Animated, SafeAreaView, StatusBar, Platform, ScrollView } from 'react-native';
 import { NewArrival } from '@/screens/main/modules/home/components';
 import { StyleSheet } from 'react-native';
 
 export const Home: FC = () => {
   return (
-    <SafeAreaView>
+    <ScrollView>
       <StatusBar
         animated={true}
         barStyle={Platform.OS === 'android' ? 'dark-content' : 'default'}
         translucent
         backgroundColor="transparent"
       />
-    </SafeAreaView>
+      <NewArrival/>
+    </ScrollView>
   );
 };
 

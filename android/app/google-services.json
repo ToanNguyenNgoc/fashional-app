@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "819581492465",
+    "project_id": "fashionalxxx",
+    "storage_bucket": "fashionalxxx.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:819581492465:android:566f80e3d7508806f29d50",
+        "android_client_info": {
+          "package_name": "org.reactjs.native.example.fashionalap"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "819581492465-39av2gcn8811t5hqmap0tfeisv1kkd5v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBr34f4lSDLc0LVd4Lm25x-QVOmslmAh1s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "819581492465-0167k0hn2lus3bpvbgo1ut3f0fguidgu.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "819581492465-ev15vntm6vtetfalgbr3gl0i5m84plon.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.fashionalapp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

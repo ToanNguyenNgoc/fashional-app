@@ -15,6 +15,8 @@
 		7699B88040F8A987B510C191 /* libPods-fashionalapp-fashionalappTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-fashionalapp-fashionalappTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		A7336D4A2A9E46FF00E53E87 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = A7336D492A9E46FF00E53E87 /* Fonts */; };
+		A7A762102B084B6500251121 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A7A7620F2B084B6500251121 /* GoogleService-Info.plist */; };
+		A7A762112B084B6500251121 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A7A7620F2B084B6500251121 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,7 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = fashionalapp/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-fashionalapp-fashionalappTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fashionalapp-fashionalappTests.release.xcconfig"; path = "Target Support Files/Pods-fashionalapp-fashionalappTests/Pods-fashionalapp-fashionalappTests.release.xcconfig"; sourceTree = "<group>"; };
 		A7336D492A9E46FF00E53E87 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = "../node_modules/react-native-vector-icons/Fonts"; sourceTree = "<group>"; };
+		A7A7620F2B084B6500251121 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -88,6 +91,7 @@
 		13B07FAE1A68108700A75B9A /* fashionalapp */ = {
 			isa = PBXGroup;
 			children = (
+				A7A7620F2B084B6500251121 /* GoogleService-Info.plist */,
 				A7336D492A9E46FF00E53E87 /* Fonts */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
@@ -238,6 +242,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7A762112B084B6500251121 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7336D4A2A9E46FF00E53E87 /* Fonts in Resources */,
+				A7A762102B084B6500251121 /* GoogleService-Info.plist in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);

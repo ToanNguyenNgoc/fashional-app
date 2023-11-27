@@ -58,4 +58,7 @@ export const signSt = StyleSheet.create({
     fontWeight: '500',
     color: color.primary,
   },
+  socialCnt: {
+    marginTop: 20,
+  },
 });
